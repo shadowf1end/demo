@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 8888
   tomcat:
     uri-encoding: UTF-8
     max-threads: 1000
@@ -12,11 +12,11 @@ weChat:
 spring:
   # 数据源
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: 123456
     type: com.zaxxer.hikari.HikariDataSource
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     hikari:
       connectionInitSql: set names utf8mb4 COLLATE utf8mb4_unicode_ci
       # connectionTestQuery: select 1
@@ -42,3 +42,8 @@ logging:
   file: logs/demo.log
   level:
     root: warn
+
+# 忽略鉴权url
+ignored:
+  userUrls:
+    - /user/login

@@ -18,4 +18,10 @@ public class Number {
     private Long downloadNum;
     @Column(name = "document_number")
     private Long docNum;
+    @Column(name = "initial_download_number")
+    private Long initDownloadNum;
+    @Column(name = "initial_document_number")
+    private Long initDocNum;
+    @Column(name = "share_point")
+    private Integer sharePoint;
 }

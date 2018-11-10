@@ -1,4 +1,4 @@
-package com.example.demo.common.service;
+package com.example.demo.service;
 
 import com.example.demo.dao.UserDao;
 import com.example.demo.entity.User;
@@ -16,5 +16,9 @@ public class UserService {
 
     public User findByOpenId(String openId) {
         return userDao.findByOpenId(openId);
+    }
+
+    public User find(Integer id) {
+        return userDao.getOne(id);
     }
 }
